@@ -1,3 +1,4 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 /* Fonts start */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Questrial&display=swap');
 
@@ -73,6 +74,10 @@ a {
     text-decoration: none;
 }
 
+i {
+    font-family: fontawesome !important;
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -144,38 +149,94 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
     &__contact {
-        max-width: 1000px;
-        padding: 100px 50px;
+        width: 420px;
+        padding: 50px 30px;
         background-color: #fff;
 
-        &-title {
-            font-size: 50px;
-            line-height: 62px;
+        p {
+            font-size: 18px;
+            line-height: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            color: #333333;
+            margin: 20px 0;
         }
 
-        &-phone {
+        &-title {
             font-size: 25px;
-            margin: 20px 0;
+            line-height: 25px;
+            margin-bottom: 20px;
+            color: #737081;
+        }
+
+        &-name,
+        &-number,
+        &-email {
+            display: block;
+            width: 100%;
+            outline: none;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 1px solid #333333;
+            padding: 15px;
+            font-size: 18px;
+            line-height: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            color: #333333;
+
+            &::placeholder {
+                font-size: 18px;
+                line-height: 18px;
+                font-family: 'Poppins', sans-serif;
+                font-weight: normal;
+                font-style: normal;
+                color: #333333;
+            }
+        }
+
+        &-icons {
             display: flex;
         }
 
-        &-email {
-            font-size: 25px;
-        }
-    }
+        &-label {
+            position: relative;
 
-    &__social {
-        display: flex;
-        align-items: center;
-        margin-top: 40px;
-
-        &-link {
-            margin-right: 20px;
-
-            img {
-                width: 50px;
-                height: 50px;
+            i {
+                font-size: 50px;
+                transition: all .2s linear;
+                cursor: pointer;
             }
+        }
+
+        &-label + &-label {
+            margin-left: 20px;
+        }
+
+        &-radio {
+            appearance: none;
+            position: absolute;
+
+            &:checked {
+                & + .fa-telegram {
+                    color: #0088cc;
+                }
+
+                & + .fa-whatsapp {
+                    color: #43d854;
+                }
+
+                & + .fa-phone-volume {
+                    color: #57c206;
+                }
+            }
+        }
+
+
+        &-btn {
+            margin-top: 30px;
         }
     }
 
@@ -198,66 +259,55 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
     &__registration {
-        max-width: 600px;
-        margin: 0 auto;
+        width: 420px;
+        padding: 80px 30px 50px;
         background-color: #fff;
-        border-radius: 30px;
-        padding: 125px 50px 100px;
-        text-align: center;
+
+
 
         &-title {
-            font-size: 25px;
-            line-height: 25px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            line-height: 20px;
+            margin-bottom: 20px;
             color: #737081;
         }
 
-        &-text {
-            font-size: 18px;
+        input {
+            display: block;
+            width: 100%;
+            outline: none;
+            margin-bottom: 10px;
+            border: none;
+            border-bottom: 1px solid #333333;
+            padding: 10px;
+            font-size: 15px;
+            line-height: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+            font-style: normal;
             color: #333333;
-            opacity: 0.76;
-        }
 
-        &-form {
-            input {
-                display: block;
-                margin: 0 auto;
-                margin-top: 15px;
-                border-radius: 15px;
-                padding: 10px;
-                font-size: 20px;
-                outline: none;
+            &::placeholder {
+                font-size: 15px;
+                line-height: 18px;
                 font-family: 'Poppins', sans-serif;
                 font-weight: normal;
                 font-style: normal;
                 color: #333333;
+            }
 
-                &::placeholder {
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: normal;
-                    font-style: normal;
-                    color: #333333;
-                    font-size: 20px;
-                }
-
-                &[type="number"],
-                &[type="text"] {
-                    width: 80%;
-                }
-
-                &[type="submit"] {
-                    border: 1px dashed #000000;
-                    box-sizing: border-box;
-                    border-radius: 83px;
-                    background-color: #6FFFEE;
-                    padding: 18px 30px;
-                    font-size: 14px;
-                    line-height: 17px;
-                    font-weight: 900;
-                    color: #000;
-                    cursor: pointer;
-                    margin-top: 25px;
-                }
+            &.modal__registration-btn {
+                width: 50%;
+                margin-top: 20px;
+                font-weight: 900;
+                font-size: 14px;
+                line-height: 17px;
+                color: #000;
+                padding: 18px 32px;
+                border: 1px dashed #000000;
+                background-color: #6FFFEE;
+                border-radius: 100px;
+                cursor: pointer;
             }
         }
     }
@@ -426,12 +476,15 @@ input[type="number"]::-webkit-inner-spin-button {
         font-size: 65px;
         line-height: 81px;
         font-family: "IntroDemo";
+    }
 
-        span {
-            font-weight: normal;
-            display: block;
-            font-family: "IntroDemoCond";
-        }
+    &__text {
+        font-weight: 900;
+        font-size: 65px;
+        line-height: 81px;
+        font-weight: normal;
+        display: block;
+        font-family: "IntroDemoCond";
     }
 
     &__btn {
@@ -482,6 +535,7 @@ input[type="number"]::-webkit-inner-spin-button {
         &::after {
             top: 250px;
             right: 0;
+            z-index: -1;
         }
     }
 
@@ -612,11 +666,14 @@ input[type="number"]::-webkit-inner-spin-button {
         }
 
         &-text {
+            p {
+                font-size: 24px;
+                line-height: 40px;
+                color: #000;
+                max-width: 450px;
+            }
+
             display: none;
-            font-size: 24px;
-            line-height: 40px;
-
-
             border-bottom: 1px solid rgba(#49455C, 0.43);
             padding: 28px 0 28px 20px;
             position: relative;
@@ -629,10 +686,6 @@ input[type="number"]::-webkit-inner-spin-button {
                 background-image: url(../images/accordion-text-decor.svg);
                 width: 9px;
                 height: 9px;
-            }
-
-            p {
-                max-width: 450px;
             }
         }
     }
@@ -896,6 +949,16 @@ input[type="number"]::-webkit-inner-spin-button {
     &__social {
         width: 235px;
 
+        &-item {
+            a {
+                margin-bottom: 20px;
+            }
+
+            a + a {
+                margin-left: 24px;
+            }
+        }
+
         &-text {
             font-size: 18px;
             line-height: 155%;
@@ -905,9 +968,9 @@ input[type="number"]::-webkit-inner-spin-button {
         }
 
         &-list {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: block;
+            text-align: center;
+            max-width: 216px;
         }
     }
 
@@ -1000,6 +1063,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 @media(max-width: 1300px) {
 
+    .welcome::after {
+        top: 0;
+        bottom: none;
+    }
+
     .task__inner {
         padding-top: 80px;
         flex-direction: column;
@@ -1027,6 +1095,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .page__title span {
         top: -80px;
+        right: 0;
     }
 
     .selection__title {
@@ -1045,9 +1114,7 @@ input[type="number"]::-webkit-inner-spin-button {
     .profession__inner {
         justify-content: center;
     }
-}
 
-@media(max-width: 1300px) {
     .welcome__inner {
         display: flex;
         flex-direction: column;
@@ -1082,6 +1149,7 @@ input[type="number"]::-webkit-inner-spin-button {
         font-size: 13px;
     }
 }
+
 
 @media(max-width: 1250px) {
     .header__btn {
@@ -1207,6 +1275,11 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media(max-width: 800px) {
+    .task__accordion-text p {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
     .studio__inner {
         grid-template-columns: 1fr 1fr;
     }
@@ -1239,6 +1312,14 @@ input[type="number"]::-webkit-inner-spin-button {
     .profession__btn {
         margin-top: 30px;
     }
+
+    .welcome {
+        padding: 0;
+
+        &::after {
+            top: -50px;
+        }
+    }
 }
 
 @media(max-width: 720px) {
@@ -1252,9 +1333,13 @@ input[type="number"]::-webkit-inner-spin-button {
         line-height: 65px;
     }
 
+    .intro__text {
+        font-size: 55px;
+        line-height: 65px;
+    }
+
 
     .welcome {
-        padding: 0;
         text-align: center;
 
         &::after {
@@ -1327,7 +1412,7 @@ input[type="number"]::-webkit-inner-spin-button {
         text-align: center;
 
         &-list {
-            justify-content: center;
+            display: contents;
         }
 
         &-text {
@@ -1404,10 +1489,6 @@ input[type="number"]::-webkit-inner-spin-button {
         top: -140px;
     }
 
-    .scheme__img {
-        display: none;
-    }
-
     .studio {
         padding-top: 235px;
         padding-bottom: 230px;
@@ -1428,6 +1509,11 @@ input[type="number"]::-webkit-inner-spin-button {
         line-height: 50px;
     }
 
+    .intro__text {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
     .intro__btn {
         margin-top: 45px;
     }
@@ -1439,17 +1525,22 @@ input[type="number"]::-webkit-inner-spin-button {
 
 @media(max-width: 535px) {
 
-    .modal__registration {
-        padding: 125px 25px 100px;
+    .modal__contact {
+        &-title {
+            font-size: 22px;
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
     }
 
-    .modal__registration-form input  {
-        font-size: 15px;
+    .modal__contact {
+        width: 380px;
+
     }
 
-    .modal__contact-phone,
-    .modal__contact-email{
-        font-size: 20px;
+    .modal__contact-name, .modal__contact-number, .modal__contact-email {
+        margin-bottom: 10px;
+        padding: 10px;
     }
 
     .header__item {
@@ -1488,11 +1579,48 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
     .footer__contacts {
-        max-width: 170px;
+        max-width: 180px;
     }
 }
 
 @media(max-width: 460px) {
+
+
+
+    .modal__close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .modal__contact {
+        padding: 45px 15px;
+    }
+
+    .modal__contact p {
+        font-size: 15px;
+        line-height: 15px;
+        margin: 15px 0;
+    }
+
+    .modal__contact-btn {
+        margin-top: 20px;
+    }
+
+    .modal__registration {
+        width: 400px;
+        padding: 60px 20px 25px;
+    }
+
+    .modal__registration-title {
+        font-size: 18px;
+        line-height: 18px;
+
+    }
+
+    .task {
+        padding-top: 50px;
+    }
+
     .page__title {
         font-size: 25px;
         line-height: 30px;
@@ -1507,6 +1635,10 @@ input[type="number"]::-webkit-inner-spin-button {
         width: 150px;
         left: -10px;
         top: -140px;
+    }
+
+    .welcome::after {
+        right: -100px;
     }
 
     .welcome__content-title {

@@ -81,4 +81,7 @@ $(document).ready(function () {
     $('.modal__registration').on('input', '.input-words', function () {
         this.value = this.value.replace(/[^a-zа-яё\s]/gi, '');
     });
+    $('.modal__contact').on('input', '.input-words', function () {
+        this.value = this.value.replace(/[^a-zа-яё\s]/gi, '');
+    });
 });

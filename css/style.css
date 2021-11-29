@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 /* Fonts start */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Questrial&display=swap");
 @font-face {
@@ -62,6 +63,10 @@ body.no-scroll {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+i {
+  font-family: fontawesome !important;
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -132,39 +137,114 @@ input[type=number]::-webkit-inner-spin-button {
   z-index: 20;
 }
 .modal__contact {
-  max-width: 1000px;
-  padding: 100px 50px;
+  width: 420px;
+  padding: 50px 30px;
   background-color: #fff;
 }
-.modal__contact-title {
-  font-size: 50px;
-  line-height: 62px;
-}
-.modal__contact-phone {
-  font-size: 25px;
+.modal__contact p {
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #333333;
   margin: 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
-.modal__contact-email {
+.modal__contact-title {
   font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 20px;
+  color: #737081;
 }
-.modal__social {
+.modal__contact-name, .modal__contact-number, .modal__contact-email {
+  display: block;
+  width: 100%;
+  outline: none;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #333333;
+  padding: 15px;
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #333333;
+}
+.modal__contact-name::-webkit-input-placeholder, .modal__contact-number::-webkit-input-placeholder, .modal__contact-email::-webkit-input-placeholder {
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #333333;
+}
+.modal__contact-name::-moz-placeholder, .modal__contact-number::-moz-placeholder, .modal__contact-email::-moz-placeholder {
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #333333;
+}
+.modal__contact-name:-ms-input-placeholder, .modal__contact-number:-ms-input-placeholder, .modal__contact-email:-ms-input-placeholder {
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #333333;
+}
+.modal__contact-name::-ms-input-placeholder, .modal__contact-number::-ms-input-placeholder, .modal__contact-email::-ms-input-placeholder {
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #333333;
+}
+.modal__contact-name::placeholder, .modal__contact-number::placeholder, .modal__contact-email::placeholder {
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #333333;
+}
+.modal__contact-icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 40px;
 }
-.modal__social-link {
-  margin-right: 20px;
+.modal__contact-label {
+  position: relative;
 }
-.modal__social-link img {
-  width: 50px;
-  height: 50px;
+.modal__contact-label i {
+  font-size: 50px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.modal__contact-label + .modal__contact-label {
+  margin-left: 20px;
+}
+.modal__contact-radio {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+}
+.modal__contact-radio:checked + .fa-telegram {
+  color: #0088cc;
+}
+.modal__contact-radio:checked + .fa-whatsapp {
+  color: #43d854;
+}
+.modal__contact-radio:checked + .fa-phone-volume {
+  color: #57c206;
+}
+.modal__contact-btn {
+  margin-top: 30px;
 }
 .modal__content {
   position: relative;
@@ -184,88 +264,83 @@ input[type=number]::-webkit-inner-spin-button {
   background: none;
 }
 .modal__registration {
-  max-width: 600px;
-  margin: 0 auto;
+  width: 420px;
+  padding: 80px 30px 50px;
   background-color: #fff;
-  border-radius: 30px;
-  padding: 125px 50px 100px;
-  text-align: center;
 }
 .modal__registration-title {
-  font-size: 25px;
-  line-height: 25px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 20px;
   color: #737081;
 }
-.modal__registration-text {
-  font-size: 18px;
-  color: #333333;
-  opacity: 0.76;
-}
-.modal__registration-form input {
+.modal__registration input {
   display: block;
-  margin: 0 auto;
-  margin-top: 15px;
-  border-radius: 15px;
-  padding: 10px;
-  font-size: 20px;
+  width: 100%;
   outline: none;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #333333;
+  padding: 10px;
+  font-size: 15px;
+  line-height: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #333333;
 }
-.modal__registration-form input::-webkit-input-placeholder {
+.modal__registration input::-webkit-input-placeholder {
+  font-size: 15px;
+  line-height: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #333333;
-  font-size: 20px;
 }
-.modal__registration-form input::-moz-placeholder {
+.modal__registration input::-moz-placeholder {
+  font-size: 15px;
+  line-height: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #333333;
-  font-size: 20px;
 }
-.modal__registration-form input:-ms-input-placeholder {
+.modal__registration input:-ms-input-placeholder {
+  font-size: 15px;
+  line-height: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #333333;
-  font-size: 20px;
 }
-.modal__registration-form input::-ms-input-placeholder {
+.modal__registration input::-ms-input-placeholder {
+  font-size: 15px;
+  line-height: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #333333;
-  font-size: 20px;
 }
-.modal__registration-form input::placeholder {
+.modal__registration input::placeholder {
+  font-size: 15px;
+  line-height: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #333333;
-  font-size: 20px;
 }
-.modal__registration-form input[type=number], .modal__registration-form input[type=text] {
-  width: 80%;
-}
-.modal__registration-form input[type=submit] {
-  border: 1px dashed #000000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 83px;
-  background-color: #6FFFEE;
-  padding: 18px 30px;
+.modal__registration input.modal__registration-btn {
+  width: 50%;
+  margin-top: 20px;
+  font-weight: 900;
   font-size: 14px;
   line-height: 17px;
-  font-weight: 900;
   color: #000;
+  padding: 18px 32px;
+  border: 1px dashed #000000;
+  background-color: #6FFFEE;
+  border-radius: 100px;
   cursor: pointer;
-  margin-top: 25px;
 }
 
 /* modal end */
@@ -425,7 +500,10 @@ input[type=number]::-webkit-inner-spin-button {
   line-height: 81px;
   font-family: "IntroDemo";
 }
-.intro__title span {
+.intro__text {
+  font-weight: 900;
+  font-size: 65px;
+  line-height: 81px;
   font-weight: normal;
   display: block;
   font-family: "IntroDemoCond";
@@ -473,6 +551,7 @@ input[type=number]::-webkit-inner-spin-button {
 .welcome__inner::after {
   top: 250px;
   right: 0;
+  z-index: -1;
 }
 .welcome__img {
   -o-object-position: top;
@@ -598,11 +677,15 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .task__accordion-text {
   display: none;
-  font-size: 24px;
-  line-height: 40px;
   border-bottom: 1px solid rgba(73, 69, 92, 0.43);
   padding: 28px 0 28px 20px;
   position: relative;
+}
+.task__accordion-text p {
+  font-size: 24px;
+  line-height: 40px;
+  color: #000;
+  max-width: 450px;
 }
 .task__accordion-text::before {
   content: "";
@@ -612,9 +695,6 @@ input[type=number]::-webkit-inner-spin-button {
   background-image: url(../images/accordion-text-decor.svg);
   width: 9px;
   height: 9px;
-}
-.task__accordion-text p {
-  max-width: 450px;
 }
 
 /* task end */
@@ -879,6 +959,12 @@ input[type=number]::-webkit-inner-spin-button {
 .footer__social {
   width: 235px;
 }
+.footer__social-item a {
+  margin-bottom: 20px;
+}
+.footer__social-item a + a {
+  margin-left: 24px;
+}
 .footer__social-text {
   font-size: 18px;
   line-height: 155%;
@@ -887,15 +973,9 @@ input[type=number]::-webkit-inner-spin-button {
   text-align: center;
 }
 .footer__social-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: block;
+  text-align: center;
+  max-width: 216px;
 }
 .footer__categories {
   max-width: 200px;
@@ -964,6 +1044,11 @@ input[type=number]::-webkit-inner-spin-button {
 /* footer end */
 /* media start */
 @media (max-width: 1300px) {
+  .welcome::after {
+    top: 0;
+    bottom: none;
+  }
+
   .task__inner {
     padding-top: 80px;
     -webkit-box-orient: vertical;
@@ -994,6 +1079,7 @@ input[type=number]::-webkit-inner-spin-button {
 
   .page__title span {
     top: -80px;
+    right: 0;
   }
 
   .selection__title {
@@ -1014,8 +1100,7 @@ input[type=number]::-webkit-inner-spin-button {
         -ms-flex-pack: center;
             justify-content: center;
   }
-}
-@media (max-width: 1300px) {
+
   .welcome__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1174,6 +1259,11 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 800px) {
+  .task__accordion-text p {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
   .studio__inner {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -1206,6 +1296,13 @@ input[type=number]::-webkit-inner-spin-button {
   .profession__btn {
     margin-top: 30px;
   }
+
+  .welcome {
+    padding: 0;
+  }
+  .welcome::after {
+    top: -50px;
+  }
 }
 @media (max-width: 720px) {
   .intro__content {
@@ -1217,8 +1314,12 @@ input[type=number]::-webkit-inner-spin-button {
     line-height: 65px;
   }
 
+  .intro__text {
+    font-size: 55px;
+    line-height: 65px;
+  }
+
   .welcome {
-    padding: 0;
     text-align: center;
   }
   .welcome::after {
@@ -1290,9 +1391,7 @@ input[type=number]::-webkit-inner-spin-button {
     text-align: center;
   }
   .footer__social-list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    display: contents;
   }
   .footer__social-text {
     margin: 0 0 20px;
@@ -1362,10 +1461,6 @@ input[type=number]::-webkit-inner-spin-button {
     top: -140px;
   }
 
-  .scheme__img {
-    display: none;
-  }
-
   .studio {
     padding-top: 235px;
     padding-bottom: 230px;
@@ -1387,6 +1482,11 @@ input[type=number]::-webkit-inner-spin-button {
     line-height: 50px;
   }
 
+  .intro__text {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
   .intro__btn {
     margin-top: 45px;
   }
@@ -1396,17 +1496,19 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 535px) {
-  .modal__registration {
-    padding: 125px 25px 100px;
+  .modal__contact-title {
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 10px;
   }
 
-  .modal__registration-form input {
-    font-size: 15px;
+  .modal__contact {
+    width: 380px;
   }
 
-  .modal__contact-phone,
-.modal__contact-email {
-    font-size: 20px;
+  .modal__contact-name, .modal__contact-number, .modal__contact-email {
+    margin-bottom: 10px;
+    padding: 10px;
   }
 
   .header__item {
@@ -1449,10 +1551,43 @@ input[type=number]::-webkit-inner-spin-button {
   }
 
   .footer__contacts {
-    max-width: 170px;
+    max-width: 180px;
   }
 }
 @media (max-width: 460px) {
+  .modal__close {
+    top: 10px;
+    right: 10px;
+  }
+
+  .modal__contact {
+    padding: 45px 15px;
+  }
+
+  .modal__contact p {
+    font-size: 15px;
+    line-height: 15px;
+    margin: 15px 0;
+  }
+
+  .modal__contact-btn {
+    margin-top: 20px;
+  }
+
+  .modal__registration {
+    width: 400px;
+    padding: 60px 20px 25px;
+  }
+
+  .modal__registration-title {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .task {
+    padding-top: 50px;
+  }
+
   .page__title {
     font-size: 25px;
     line-height: 30px;
@@ -1467,6 +1602,10 @@ input[type=number]::-webkit-inner-spin-button {
     width: 150px;
     left: -10px;
     top: -140px;
+  }
+
+  .welcome::after {
+    right: -100px;
   }
 
   .welcome__content-title {
