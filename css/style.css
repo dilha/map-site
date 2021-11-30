@@ -270,7 +270,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .modal__registration-title {
   font-size: 20px;
-  line-height: 20px;
+  line-height: 24px;
   margin-bottom: 20px;
   color: #737081;
 }
@@ -527,6 +527,7 @@ input[type=number]::-webkit-inner-spin-button {
   height: 262px;
   bottom: 40%;
   right: 0;
+  z-index: -1;
 }
 .welcome__inner {
   display: -ms-grid;
@@ -543,14 +544,16 @@ input[type=number]::-webkit-inner-spin-button {
   background-image: url(../images/welcome-decor.png);
   width: 65px;
   height: 65px;
+  z-index: -1;
 }
 .welcome__inner::before {
   top: -50px;
   left: 50px;
+  z-index: 1;
 }
 .welcome__inner::after {
   top: 250px;
-  right: 0;
+  right: -100px;
   z-index: -1;
 }
 .welcome__img {
@@ -559,6 +562,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .welcome__content {
   max-width: 762px;
+  z-index: 5;
 }
 .welcome__content-title {
   font-weight: 900;
@@ -579,6 +583,7 @@ input[type=number]::-webkit-inner-spin-button {
   line-height: 40px;
   opacity: 0.76;
   margin: 24px 0 45px;
+  text-align: justify;
 }
 
 .scheme__img {
@@ -1046,6 +1051,7 @@ input[type=number]::-webkit-inner-spin-button {
 @media (max-width: 1300px) {
   .welcome::after {
     top: 0;
+    z-index: 1;
     bottom: none;
   }
 

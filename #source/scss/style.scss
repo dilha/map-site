@@ -267,7 +267,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
         &-title {
             font-size: 20px;
-            line-height: 20px;
+            line-height: 24px;
             margin-bottom: 20px;
             color: #737081;
         }
@@ -509,6 +509,7 @@ input[type="number"]::-webkit-inner-spin-button {
         height: 262px;
         bottom: 40%;
         right: 0;
+        z-index: -1;
     }
 
     &__inner {
@@ -525,16 +526,18 @@ input[type="number"]::-webkit-inner-spin-button {
             background-image: url(../images/welcome-decor.png);
             width: 65px;
             height: 65px;
+            z-index: -1;
         }
 
         &::before {
             top: -50px;
             left: 50px;
+            z-index: 1;
         }
 
         &::after {
             top: 250px;
-            right: 0;
+            right: -100px;
             z-index: -1;
         }
     }
@@ -545,6 +548,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
     &__content {
         max-width: 762px;
+        z-index: 5;
 
         &-title {
             font-weight: 900;
@@ -568,6 +572,7 @@ input[type="number"]::-webkit-inner-spin-button {
             line-height: 40px;
             opacity: 0.76;
             margin: 24px 0 45px;
+            text-align: justify;
         }
     }
 }
@@ -1065,6 +1070,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .welcome::after {
         top: 0;
+        z-index: 1;
         bottom: none;
     }
 
